@@ -38,12 +38,16 @@ export async function GET() {
       enable: [
         "careportal", "boluscalc", "food", "rawbg", "iob", "cob",
         "basal", "ar2", "simplealarms", "profile", "devicestatus",
-        "pump", "openaps", "loop", "sage", "cage", "iage", "bage",
+        "pump", "openaps", "loop", "sage", "cage", "iage", "bage", "upbat",
         "pushover", "treatmentnotify",
         ...cfg.enabledPlugins,
       ].filter((p) => !cfg.disabledPlugins.includes(p)),
     },
-    extendedSettings: {},
+    extendedSettings: {
+      devicestatus: {
+        advanced: cfg.devicestatusAdvanced,
+      },
+    },
     authorized: null,
   }));
 }

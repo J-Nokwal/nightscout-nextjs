@@ -53,6 +53,7 @@ export interface ServerConfig {
   upbatEnableAlerts: boolean;
   upbatWarn: number;
   upbatUrgent: number;
+  devicestatusAdvanced: boolean;
 
   pumpEnableAlerts: boolean;
   pumpWarnOnSuspend: boolean;
@@ -142,6 +143,7 @@ export function getServerConfig(): ServerConfig {
     upbatEnableAlerts: envBool("UPBAT_ENABLE_ALERTS", false),
     upbatWarn:         envNum("UPBAT_WARN",    30),
     upbatUrgent:       envNum("UPBAT_URGENT",  20),
+    devicestatusAdvanced: envBool("DEVICESTATUS_ADVANCED", true),
 
     pumpEnableAlerts:  envBool("PUMP_ENABLE_ALERTS",   false),
     pumpWarnOnSuspend: envBool("PUMP_WARN_ON_SUSPEND", false),
